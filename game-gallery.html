@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS55.13 Fall 2025 Week 2: My Video Game Collection</title>
+        <!-- load jquery to use for external json loading -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- load babel transpiler to convert React's JSX markup to pure JavaScript -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <!-- create an element that can be the root element for your react application -->
+        <div id="gameApp"></div>
+        <!-- load our custom script with react component -->
+        <script data-type="module" data-presets="react" type="text/babel">
+            "use strict";
+            // load react as js module
+            import React from 'https://cdn.jsdelivr.net/npm/react@19.1.1/+esm';
+            // load createRoot method from ReactDOM/client
+            import { createRoot } from 'https://cdn.jsdelivr.net/npm/react-dom@19.1.1/client/+esm';
+            
+            // define a react component with different name and structure
+            function VideoGameGallery(props) {
+                return  <div>
+                            <h1>My Favorite Video Games</h1>
+                            <div>
+                            {
+                                // use map() to loop thru your game array
+                                props.games.map(
+                                    (game, index) => (
+                                        <div key={index} style={{border: '1px solid #ccc', margin: '10px', padding: '15px'}}>
+                                            <h3>{game.gameTitle}</h3>
+                                            <p><strong>Developer:</strong> {game.developer}</p>
+                                            <p><strong>Genre:</strong> {game.genre}</p>
+                                            <p><strong>Release Year:</strong> {game.releaseYear}</p>
+                                            <p><strong>Platforms:</strong> {game.platforms}</p>
+                                        </div>
+                                    )
+                                )
+                            }
+                            </div>
+                        </div>;
+            }
+            
+            // use jQuery to load JSON file
+            $.getJSON(
+                "/games",  // your endpoint (different from professor's "x")
+                function(gameDataFromServer) {
+                    console.log(gameDataFromServer);
+                    // find html element
+                    const myGameElement = document.getElementById('gameApp');
+                    // reactDOM createRoot() 
+                    const myGameRoot = createRoot(myGameElement);
+                    // render your component
+                    myGameRoot.render(
+                        <VideoGameGallery games={gameDataFromServer} />
+                    );
+                }
+            );
+        </script>
+    </body>
+</html>

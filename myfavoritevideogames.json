@@ -1,0 +1,37 @@
+[
+  {
+    "gameTitle": "The Elder Scrolls V: Skyrim",
+    "developer": "Bethesda Game Studios",
+    "genre": "Action RPG",
+    "releaseYear": 2011,
+    "platforms": "PC, Xbox, PlayStation, Nintendo Switch"
+  },
+  {
+    "gameTitle": "The Elder Scrolls IV: Oblivion", 
+    "developer": "Bethesda Game Studios",
+    "genre": "Action RPG",
+    "releaseYear": 2006,
+    "platforms": "PC, Xbox 360, PlayStation 3"
+  },
+  {
+    "gameTitle": "Fallout 4",
+    "developer": "Bethesda Game Studios", 
+    "genre": "Post-Apocalyptic RPG",
+    "releaseYear": 2015,
+    "platforms": "PC, Xbox One, PlayStation 4"
+  },
+  {
+    "gameTitle": "Baldur's Gate 3",
+    "developer": "Larian Studios",
+    "genre": "Turn-Based RPG", 
+    "releaseYear": 2023,
+    "platforms": "PC, PlayStation 5, Xbox Series X/S"
+  },
+  {
+    "gameTitle": "Left 4 Dead 2",
+    "developer": "Valve Corporation",
+    "genre": "Zombie Survival",
+    "releaseYear": 2009,
+    "platforms": "PC, Xbox 360"
+  }
+]
